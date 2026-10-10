@@ -320,7 +320,7 @@ const PRECISAMOS = [
 const INVESTIMENTO_ITENS = [
   "80 horas de consultoria, a R$ 200,00 a hora",
   "Projeto fechado, sem mensalidade",
-  "Pagamento por boleto",
+  "Pagamento por boleto, em até 3 vezes, com vencimentos em 30, 60 e 90 dias",
   "Nenhum custo de ferramenta nova: tudo é feito no Movidesk e no SenseData que a Easyone já contrata",
 ];
 
@@ -415,7 +415,7 @@ const TERMO: Termo = {
     implantacao: COMERCIAL.implantacao,
     parcelado: COMERCIAL.parcelado,
     condicoes:
-      "Valor único pelo projeto, correspondente a 80 horas de consultoria a R$ 200,00 a hora, sem mensalidade. O pagamento é feito por boleto, emitido depois deste aceite.",
+      "Valor único pelo projeto, correspondente a 80 horas de consultoria a R$ 200,00 a hora, sem mensalidade. O pagamento é feito por boleto, em até 3 vezes, com vencimentos em 30, 60 e 90 dias, emitido depois deste aceite.",
   },
   incluso: INCLUSO,
   naoIncluso: NAO_INCLUSO,
@@ -684,6 +684,7 @@ export default async function PropostaEasyonePage({
               <p className="font-display text-5xl leading-[0.9] tracking-tighter text-accent md:text-6xl">
                 {COMERCIAL.implantacao}
               </p>
+              <p className="font-mono text-sm text-text">{COMERCIAL.parcelado}</p>
               <p className="text-sm leading-relaxed text-text-muted">
                 Cobre os 6 blocos, as 8 semanas e o treinamento do consultor.
               </p>

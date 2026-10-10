@@ -2,13 +2,13 @@
 
 > Rascunho para aprovação (Portão 2). Nada daqui virou página ainda.
 > Slug: `easyone` · Destinatária: Nicole Rosa · Easyone · Emissão: 10 de outubro de 2026
-> Condições: R$ 16.000,00 (80 horas a R$ 200,00), 8 semanas, sem mensalidade, boleto.
+> Condições: R$ 16.000,00 (80 horas a R$ 200,00), 8 semanas, sem mensalidade, boleto em até 3 vezes (30, 60 e 90 dias).
 > Fontes de todos os números: `dossie.md`.
 
 ## Pontos que eu assumi e você precisa confirmar
 
 1. **Divisão das 80 horas** entre Movidesk e SenseData: não informei na proposta.
-2. **Condição do boleto:** à vista, ou em quantas parcelas? Está só "boleto".
+2. ~~Condição do boleto.~~ Resolvido em 10/10: até 3 vezes, em 30, 60 e 90 dias, porque o valor passa de R$ 8 mil.
 3. **Conteúdo do treinamento de SenseData:** montei a partir do que a Nicole disse na call. Incluí gravação das sessões e um roteiro escrito para o multiplicador repassar. Confirma?
 4. **Treinamento começa na semana 1**, em paralelo ao Movidesk, porque a Nicole disse que esse é o primeiro passo dela.
 5. **Fora do escopo:** o acompanhamento continuado de CS (segundo pedido da Nicole), os agentes de IA mostrados na call e o controle de chamados não integrados ao SAP (pedido do Leonardo). Estão escritos como "não incluso".
@@ -226,7 +226,7 @@ A M2G é a única consultoria de CS e CX do mercado com selo Franquia Zenvia. A 
 - **R$ 16.000,00**
 - 80 horas de consultoria, a R$ 200,00 a hora
 - Projeto fechado, sem mensalidade
-- Pagamento por boleto
+- Pagamento por boleto, em até 3 vezes, com vencimentos em 30, 60 e 90 dias
 
 **Ancoragem:** o time da Easyone apontou 9.804 horas no Movidesk no último ano. Este projeto equivale a menos de 1% disso, para que as outras 99% passem a aparecer nos números.
 

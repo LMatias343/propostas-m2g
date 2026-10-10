@@ -1,8 +1,9 @@
 "use server";
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { destinoValido, queryDoDestino } from "./destinos";
+import { origemDoRequest, registrarAbertura } from "./avisos";
 import { nomeCookie, senhaConfere, valorCookie } from "./gate";
 
 /**
@@ -31,6 +32,9 @@ export async function entrarNaProposta(slug: string, formData: FormData) {
     path: `/proposta/${slug}`,
     maxAge: 60 * 60 * 24 * 60, // 60 dias
   });
+
+  // Registra a abertura e avisa quem vendeu. Não segura o cliente se falhar.
+  await registrarAbertura(slug, origemDoRequest(await headers()));
 
   redirect(`/proposta/${slug}${queryDoDestino(destino)}`);
 }

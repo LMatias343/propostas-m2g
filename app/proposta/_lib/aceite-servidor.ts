@@ -2,6 +2,7 @@ import "server-only";
 import { NextResponse } from "next/server";
 import { cookies, headers } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { avisar, origemDoRequest } from "./avisos";
 import { cookieConfere, nomeCookie } from "./gate";
 import { condicoesDoAceite, propostaComercial } from "./propostas";
 
@@ -58,6 +59,8 @@ export async function gravarAceite(
     console.error("[proposta/aceite] falha ao gravar", { slug, erro: error.message });
     return NextResponse.json({ error: "falha ao registrar" }, { status: 500 });
   }
+
+  await avisar("aceite", slug, origemDoRequest(h));
 
   return NextResponse.json({ ok: true });
 }

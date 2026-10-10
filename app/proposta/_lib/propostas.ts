@@ -65,7 +65,7 @@ export const PROPOSTAS: Record<string, PropostaComercial> = {
     emitidoEm: "10 de outubro de 2026",
     termoVersao: "2026-10-10",
     implantacao: "R$ 16.000,00",
-    parcelado: "80 horas de consultoria a R$ 200,00 a hora · boleto",
+    parcelado: "no boleto, em até 3 vezes: 30, 60 e 90 dias",
     prazo: "8 semanas",
   },
 };
