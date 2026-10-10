@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+build
+.DS_Store
+
+# segredos: senha de cliente e chave do banco nunca entram no git
+.env
+.env.local
+.env*.local
+
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+
+# material bruto de cliente (transcrição de call, diagnósticos) fica só na máquina
+propostas/*/dados-brutos/
