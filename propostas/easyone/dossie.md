@@ -54,7 +54,7 @@ Trechos ajustados só na grafia; a transcrição automática tem erros.
 
 ## 5. Onde a oferta da M2G encaixa
 
-Oferta informada pelo Luciano: 80 horas a R$ 200 a hora (R$ 16.000), em 8 semanas, com fechamento por boleto.
+Oferta informada pelo Luciano: 80 horas a R$ 200 a hora (R$ 16.000), em 8 semanas, sem mensalidade, com fechamento por boleto. O diagnóstico do Movidesk já foi apresentado à Nicole.
 
 | Gargalo | Entrega | Origem |
 |---|---|---|
@@ -71,8 +71,7 @@ Metas para 90 dias sugeridas no diagnóstico: tickets parados em Resolvido de 2.
 ## Em aberto
 
 - O que as 80 horas cobrem: só a reestruturação do Movidesk, ou também o treinamento de SenseData e o acompanhamento de CS, que foram os dois pedidos da Nicole.
-- Se há mensalidade depois das 8 semanas.
-- WhatsApp da Nicole (senha da proposta) e do Luciano (botão de dúvida).
+- WhatsApp da Nicole (senha da proposta). O do Luciano é (11) 91254-9449, o das propostas em PowerPoint.
 - Se o atendimento Movidesk da Easyone já foi transferido para a franquia M2G.
 - Nível de parceria SAP: diretórios divergem entre Gold e parceiro registrado; não usar na proposta.
 

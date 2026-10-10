@@ -59,6 +59,15 @@ export const PROPOSTAS: Record<string, PropostaComercial> = {
     mensal: "R$ 1.900 / mês",
     prazo: "3 semanas",
   },
+
+  easyone: {
+    destinatario: "Nicole Rosa · Easyone",
+    emitidoEm: "10 de outubro de 2026",
+    termoVersao: "2026-10-10",
+    implantacao: "R$ 16.000,00",
+    parcelado: "80 horas de consultoria a R$ 200,00 a hora · boleto",
+    prazo: "8 semanas",
+  },
 };
 
 export function propostaComercial(slug: string): PropostaComercial | undefined {
