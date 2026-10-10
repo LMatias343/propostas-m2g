@@ -21,6 +21,14 @@ import { ancoraDoDestino, destinoValido } from "@/app/proposta/_lib/destinos";
 import { cookieConfere, nomeCookie } from "@/app/proposta/_lib/gate";
 import { minutosDeLeitura } from "@/app/proposta/_lib/leitura";
 import { PROPOSTAS } from "@/app/proposta/_lib/propostas";
+import {
+  CenaClassificacao,
+  CenaEncerramento,
+  CenaPaineis,
+  CenaRoteamento,
+  CenaSenseData,
+  CenaSla,
+} from "./cenas";
 
 /**
  * Proposta da Easyone: reestruturação do Movidesk e treinamento de SenseData.
@@ -460,6 +468,17 @@ export default async function PropostaEasyonePage({
     );
   }
 
+  // As cenas animadas entram aqui, e não na constante DELIVERABLES, porque
+  // aquela constante também alimenta o cálculo do tempo de leitura.
+  const cenas: Record<string, React.ReactNode> = {
+    B1: <CenaEncerramento />,
+    B2: <CenaSla />,
+    B3: <CenaClassificacao />,
+    B4: <CenaRoteamento />,
+    B5: <CenaPaineis />,
+    B6: <CenaSenseData />,
+  };
+
   return (
     <main className="mesh-bg min-h-screen">
       {destino && <RolarPara alvo={ancoraDoDestino(destino)} />}
@@ -570,7 +589,10 @@ export default async function PropostaEasyonePage({
         </div>
         <div className="mt-10 space-y-6">
           {DELIVERABLES.map((b) => (
-            <DeliverableBlock key={b.n} block={b} />
+            <DeliverableBlock
+              key={b.n}
+              block={b.media ? { ...b, media: { ...b.media, node: cenas[b.media.id] } } : b}
+            />
           ))}
         </div>
       </Section>
