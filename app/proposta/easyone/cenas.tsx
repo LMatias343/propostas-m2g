@@ -514,3 +514,127 @@ export function CenaSenseData() {
     </Janela>
   );
 }
+
+/* ───────────────────────────── 07 · Auditor de tickets ───────────────────────────── */
+
+const PENDENCIAS = ["O que o cliente pediu", "Passo a passo da solução", "Validação do cliente"];
+
+export function CenaAuditor() {
+  const { passo, alvo } = usePassos(10);
+  const lendo = passo === 1;
+  const reaberto = passo >= 2 && passo < 6;
+  const corrigido = passo >= 6;
+  const aprovado = passo >= 7;
+
+  return (
+    <Janela app="Movidesk" alvo={alvo}>
+      <div className="grid h-full grid-cols-[1.15fr_1fr] gap-[1.2em]">
+        <Cartao
+          className={cn(
+            "flex flex-col gap-[0.8em] transition-colors duration-500",
+            lendo && "border-border-accent bg-accent-soft",
+          )}
+        >
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[0.75em] text-text-subtle">#48377</span>
+            <Etiqueta tom={aprovado ? "verde" : reaberto ? "ambar" : "neutro"}>
+              {aprovado && <Check className="size-[1em]" strokeWidth={3} />}
+              {aprovado ? "Dentro do padrão" : reaberto ? "Reaberto pela auditoria" : "Resolvido"}
+            </Etiqueta>
+          </div>
+          <p className="text-[1em] font-medium leading-tight text-text">Relatório de estoque não fecha</p>
+          <div className="mt-auto space-y-[0.4em]">
+            <Rotulo>Solução registrada</Rotulo>
+            <div className="min-h-[4.2em] rounded-[0.6em] border border-border bg-bg-elevated p-[0.7em]">
+              {corrigido ? (
+                <div className="space-y-[0.45em]">
+                  <Traco largura="92%" />
+                  <Traco largura="78%" />
+                  <Traco largura="85%" />
+                  <Traco largura="40%" />
+                </div>
+              ) : (
+                <p className="text-[0.85em] text-text-muted">Feito.</p>
+              )}
+            </div>
+          </div>
+        </Cartao>
+
+        <Cartao className={cn("flex flex-col gap-[0.8em]", entra(passo >= 3))}>
+          <Rotulo>Ação interna · auditoria</Rotulo>
+          <div className="flex flex-1 flex-col justify-around">
+            {PENDENCIAS.map((item, i) => {
+              const resolvido = corrigido;
+              const visivel = passo >= 3 + i || corrigido;
+              return (
+                <div key={item} className={cn("flex items-center gap-[0.6em]", entra(visivel))}>
+                  <span
+                    className={cn(
+                      "flex size-[1.4em] shrink-0 items-center justify-center rounded-full border transition-colors duration-500",
+                      resolvido ? "border-success/40 bg-success/10 text-success" : "border-[#d98a00]/40 bg-[#ffbd58]/20 text-[#8a5a00]",
+                    )}
+                  >
+                    {resolvido ? (
+                      <Check className="size-[0.8em]" strokeWidth={3} />
+                    ) : (
+                      <span className="text-[0.75em] font-medium leading-none">!</span>
+                    )}
+                  </span>
+                  <span className="text-[0.82em] leading-tight text-text">{item}</span>
+                </div>
+              );
+            })}
+          </div>
+        </Cartao>
+      </div>
+    </Janela>
+  );
+}
+
+/* ───────────────────────────── 08 · Resumo diário de SLA ───────────────────────────── */
+
+const LINHAS_RESUMO: { equipe: string; situacao: string; tom: Tom }[] = [
+  { equipe: "Suporte SAP", situacao: "1ª resposta estourada", tom: "ambar" },
+  { equipe: "Desenvolvimento", situacao: "Solução estourada", tom: "ambar" },
+  { equipe: "Suporte SAP", situacao: "Solução a vencer", tom: "roxo" },
+];
+
+export function CenaResumoSla() {
+  const { passo, alvo } = usePassos(9);
+  return (
+    <Janela app="E-mail" alvo={alvo}>
+      <div className="flex h-full flex-col gap-[0.9em]">
+        <div className={cn("flex items-center gap-[0.7em]", entra(passo >= 1))}>
+          <Mail className="size-[1.4em] shrink-0 text-accent" strokeWidth={1.75} />
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-[0.95em] font-medium leading-tight text-text">Resumo diário de SLA</p>
+            <p className="text-[0.7em] text-text-subtle">hoje, 18:00 · para a liderança do suporte</p>
+          </div>
+        </div>
+
+        <Cartao className={cn("space-y-[0.5em]", entra(passo >= 2))}>
+          <Rotulo>Tickets dentro do SLA</Rotulo>
+          <Barra valor={passo >= 2 ? 81 : 0} tom="verde" />
+        </Cartao>
+
+        <div className="flex min-h-0 flex-1 flex-col justify-around">
+          {LINHAS_RESUMO.map((linha, i) => (
+            <div
+              key={linha.equipe + linha.situacao}
+              className={cn(
+                "flex items-center justify-between gap-[0.8em] rounded-[0.6em] border border-border bg-white px-[0.8em] py-[0.55em]",
+                entra(passo >= 3 + i),
+              )}
+            >
+              <div className="flex min-w-0 items-center gap-[0.7em]">
+                <span className="font-mono text-[0.72em] text-text-subtle">#48{410 + i * 7}</span>
+                <span className="truncate text-[0.82em] text-text">{linha.equipe}</span>
+              </div>
+              <Etiqueta tom={linha.tom}>{linha.situacao}</Etiqueta>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Janela>
+  );
+}

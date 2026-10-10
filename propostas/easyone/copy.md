@@ -11,7 +11,9 @@
 2. ~~Condição do boleto.~~ Resolvido em 10/10: até 3 vezes, em 30, 60 e 90 dias, porque o valor passa de R$ 8 mil.
 3. **Conteúdo do treinamento de SenseData:** montei a partir do que a Nicole disse na call. Incluí gravação das sessões e um roteiro escrito para o multiplicador repassar. Confirma?
 4. **Treinamento começa na semana 1**, em paralelo ao Movidesk, porque a Nicole disse que esse é o primeiro passo dela.
-5. **Fora do escopo:** o acompanhamento continuado de CS (segundo pedido da Nicole), os agentes de IA mostrados na call e o controle de chamados não integrados ao SAP (pedido do Leonardo). Estão escritos como "não incluso".
+5. **Fora do escopo:** o acompanhamento continuado de CS (segundo pedido da Nicole), o Instant Support, a sugestão de tickets semelhantes e o controle de chamados não integrados ao SAP (pedidos do Leonardo). Estão escritos como "não incluso".
+   **Dentro do escopo desde 10/10:** o agente auditor de tickets e o agente de resumo diário de SLA, nas mesmas 80 horas e 8 semanas, com o custo de uso por conta da Easyone.
+   **Assumi sobre os agentes:** o resumo diário entra nas semanas 3 e 4 e o auditor nas semanas 5 a 7; o auditor passa um período só sugerindo antes de reabrir tickets; a estimativa de custo mensal é apresentada antes de cada agente ser ligado.
 6. **Hora adicional a R$ 200,00**, mediante aprovação, e **validade de 15 dias**: tirei dos seus modelos em PowerPoint.
 7. **E-mail de transição do atendimento Movidesk para a franquia M2G:** coloquei como pré-requisito. Se já foi enviado, eu tiro.
 8. **Seção 7 (Quem implementa)** cita você e o Anderson. A frase da franquia Zenvia é a dos seus modelos.
@@ -50,7 +52,7 @@ O ticket entra e é atendido, mas não sai. Sem fechamento não existe pesquisa,
 ## 3. Gargalo
 
 **Etiqueta:** ONDE VAZA
-**Título:** Cinco pontos que escondem o bom atendimento que vocês já fazem.
+**Título:** Seis pontos que escondem o bom atendimento que vocês já fazem.
 
 **01 · O ticket é resolvido e nunca fecha**
 São 2.344 tickets parados em "Resolvido", metade deles há mais de 183 dias. Nenhum gatilho leva de Resolvido para Fechado, e a pesquisa de satisfação só dispara no Fechado. Por isso os clientes "nunca avaliam": a maioria nem recebe o convite.
@@ -67,6 +69,9 @@ Nenhuma equipe está ligada a serviço e o e-mail, que traz 42% da entrada, cheg
 **05 · O SenseData parou quando a Viviana saiu**
 Nada foi registrado desde então. Projetos se encerraram sem a pesquisa de satisfação de fase, e quem ficou não sabe por onde começar. O conhecimento estava em uma pessoa.
 
+**06 · A solução de um ticket não vira conhecimento**
+Ninguém confere como o ticket foi encerrado, e o estouro de SLA só aparece depois que aconteceu. Na call, o Leonardo pediu um jeito de os consultores encontrarem a solução de casos parecidos, e hoje esse histórico depende de como cada um escreveu.
+
 ## 4. Tese
 
 **Etiqueta:** A DIFERENÇA
@@ -79,11 +84,12 @@ Nada foi registrado desde então. Projetos se encerraram sem a pesquisa de satis
 | "Dúvida" em 69% dos tickets | Produto, módulo e tipo de demanda em cada ticket |
 | Fila que alguém precisa distribuir à mão | Ticket que já chega na equipe certa |
 | SenseData que dependia de uma pessoa | Um consultor da casa que sabe operar e ensinar |
+| Ninguém confere como o ticket foi encerrado | Cada encerramento auditado por um agente de IA |
 
 ## 5. Entregáveis
 
 **Etiqueta:** O QUE ENTRA
-**Título:** Seis blocos, cada um resolvendo um ponto do diagnóstico.
+**Título:** Oito blocos, cada um resolvendo um ponto do diagnóstico.
 
 ### 01 · Encerramento e pesquisa de satisfação
 **Promessa:** Todo cliente atendido passa a receber a pesquisa.
@@ -176,6 +182,36 @@ Treinamos o consultor que você indicar para operar o SenseData e para ensinar q
 
 **Vídeo (cena):** consultor abrindo um projeto encerrado no SenseData, disparando a pesquisa de fase e vendo a resposta entrar no painel do cliente.
 
+### 07 · Agente auditor de tickets
+**Promessa:** Todo ticket encerrado passa por uma conferência antes de virar histórico.
+
+Um agente de IA lê cada ticket resolvido, com as ações, a categoria e a urgência, e compara com o que a Easyone define como um bom encerramento. Se faltar alguma coisa, ele reabre o ticket e diz ao consultor o que completar. O que fica registrado passa a servir de base de conhecimento.
+
+**O que entra**
+- Critérios de um bom encerramento escritos com você e com o Leonardo
+- Leitura de cada ticket resolvido, com todas as ações
+- Reabertura automática do ticket fora do padrão
+- Orientação ao consultor sobre o que falta e como melhorar o registro
+- Fluxo documentado e entregue à Easyone
+
+**Compromisso importante:** a orientação do auditor vai em ação interna, visível só para o seu time. Os critérios são de vocês, e o agente só passa a reabrir tickets depois de um período de teste em que apenas sugere.
+
+**Vídeo (cena):** ticket resolvido só com a palavra Feito, o agente lendo, o status virando Reaberto pela auditoria e a ação interna listando o que falta, até o registro ficar dentro do padrão.
+
+### 08 · Agente de resumo diário de SLA
+**Promessa:** No fim do dia, você sabe o que estourou e o que está para estourar.
+
+Um agente analisa os tickets do dia e manda um e-mail para a liderança: quantos ficaram dentro do SLA, quais estouraram, se foi na primeira resposta ou na solução, de qual equipe e de qual responsável. A conversa sobre prazo deixa de esperar o relatório do mês.
+
+**O que entra**
+- E-mail diário com os tickets dentro e fora do SLA
+- Separação entre primeira resposta e solução
+- Equipe e responsável de cada ticket estourado, com o link do ticket
+- Lista dos tickets próximos do vencimento
+- Fluxo documentado e entregue à Easyone
+
+**Vídeo (cena):** e-mail de resumo diário chegando, a barra de tickets dentro do SLA enchendo e as linhas dos tickets estourados e a vencer aparecendo, cada uma com a equipe.
+
 ## 7. Quem implementa
 
 **Título:** Quem vai estar com vocês.
@@ -191,8 +227,8 @@ A M2G é a única consultoria de CS e CX do mercado com selo Franquia Zenvia. A 
 | Quando | O que acontece | Entrega ao fim |
 |---|---|---|
 | Semanas 1 e 2 | Encerramento e higiene no Movidesk. Início do treinamento de SenseData. | Resolvido fecha sozinho, os 2.344 tickets antigos saem do backlog e a pesquisa passa a chegar. O consultor já opera o SenseData e dispara as pesquisas de fase pendentes. |
-| Semanas 3 e 4 | SLA por contrato | Prazos novos em produção, por tipo de cliente e por urgência |
-| Semanas 5 a 7 | Classificação e roteamento | Nova árvore de serviços, formulários no portal e tickets distribuídos por equipe |
+| Semanas 3 e 4 | SLA por contrato. Agente de resumo diário de SLA. | Prazos novos em produção, por tipo de cliente e por urgência, e o resumo diário chegando à liderança |
+| Semanas 5 a 7 | Classificação e roteamento. Agente auditor em teste, só sugerindo. | Nova árvore de serviços, formulários no portal, tickets distribuídos por equipe e conferidos pelo auditor no encerramento |
 | Semana 8 | Alertas, horas e painéis. Fechamento do treinamento. | Painéis por equipe e por produto no ar, e o roteiro do SenseData entregue ao consultor |
 
 **Metas para 90 dias**
@@ -214,6 +250,8 @@ A M2G é a única consultoria de CS e CX do mercado com selo Franquia Zenvia. A 
 | O nome do consultor que será treinado | Para marcar as sessões de SenseData | Antes da semana 1 |
 | Validação dos prazos de SLA por contrato | São compromissos da Easyone com os clientes dela | Semana 3 |
 | Validação da árvore de serviços e dos campos adicionais | Só vocês sabem como os produtos e add-ons se dividem | Semana 5 |
+| Critérios do que é um ticket bem encerrado | É a régua que o agente auditor vai aplicar | Semana 5 |
+| Aprovação do custo de uso dos agentes de IA | O modelo de IA e a hospedagem dos fluxos são pagos pela Easyone direto aos fornecedores. A estimativa mensal é apresentada antes de cada agente ser ligado | Semanas 3 e 5 |
 | Quem cobre a fila de Desenvolvimento além da Carolina | Decisão de gestão | Semana 5 |
 | Horas contratadas de cada AMS | Hoje 61 dos 79 contratos estão com 0 hora cadastrada | Semana 8 |
 | Aprovação em até 48 horas nos pontos de decisão | É o que segura o prazo de 8 semanas | Durante todo o projeto |
@@ -230,7 +268,7 @@ A M2G é a única consultoria de CS e CX do mercado com selo Franquia Zenvia. A 
 
 **Ancoragem:** o time da Easyone apontou 9.804 horas no Movidesk no último ano. Este projeto equivale a menos de 1% disso, para que as outras 99% passem a aparecer nos números.
 
-**Custos de terceiros:** nenhum. Tudo é feito no Movidesk e no SenseData que a Easyone já contrata.
+**Custos de terceiros:** não há licença nova, porque tudo roda no Movidesk e no SenseData que a Easyone já contrata. O uso dos dois agentes de IA (modelo de IA e hospedagem dos fluxos) é pago pela Easyone, direto aos fornecedores.
 
 **Botão:** Aceitar a proposta
 **Depois do aceite:** o botão abre o WhatsApp do Luciano com a mensagem "Aceitei a proposta da M2G. Pode emitir o boleto."
@@ -239,6 +277,7 @@ A M2G é a única consultoria de CS e CX do mercado com selo Franquia Zenvia. A 
 
 **Está incluso**
 - As cinco frentes de reestruturação do Movidesk descritas nos blocos 01 a 05
+- Os dois agentes de IA dos blocos 07 e 08: auditor de tickets e resumo diário de SLA
 - O fechamento em lote dos tickets parados em Resolvido
 - Treinamento completo de SenseData para um consultor da Easyone, com sessões gravadas e roteiro escrito
 - Reuniões de acompanhamento durante as 8 semanas
@@ -246,7 +285,8 @@ A M2G é a única consultoria de CS e CX do mercado com selo Franquia Zenvia. A 
 
 **Não está incluso**
 - Acompanhamento continuado de CS depois das 8 semanas. É uma proposta à parte
-- Agentes de IA no Movidesk, como o auditor de tickets, o resumo diário de SLA e o Instant Support
+- O custo de uso dos agentes de IA (modelo de IA e hospedagem dos fluxos), pago pela Easyone direto aos fornecedores
+- Outros agentes de IA, como o Instant Support dentro do produto e a sugestão automática de tickets semelhantes
 - Integração de WhatsApp ao atendimento
 - Desenvolvimento no SAP da Easyone ou mudança nas integrações do SAP com o Movidesk e o SenseData
 - Controle dos chamados que não integraram com o SAP
@@ -281,8 +321,11 @@ Não. O que medimos é que a pesquisa nem chega a quase metade dos clientes, por
 **Meu time vai precisar parar para isso?**
 Não. A configuração é feita pela M2G. De vocês, precisamos das validações da tabela acima, com resposta em até 48 horas.
 
-**E os agentes de IA que vocês mostraram na call?**
-Eles dependem de ticket bem classificado e bem encerrado, que é o que este projeto entrega. São a etapa seguinte e não estão nesta proposta.
+**Quanto custa manter os agentes de IA depois do projeto?**
+Não há mensalidade da M2G. O que existe é o custo de uso, do modelo de IA e da hospedagem dos fluxos, pago pela Easyone direto aos fornecedores. A estimativa mensal é apresentada antes de cada agente ser ligado, e você decide com o número na mão.
+
+**E o Instant Support que vocês mostraram na call?**
+Não está nesta proposta. Ele depende de uma base de conhecimento bem formada, e é o auditor de tickets que começa a construir essa base. É a etapa seguinte.
 
 ## 14. Próximos passos
 

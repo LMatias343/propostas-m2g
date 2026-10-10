@@ -22,9 +22,11 @@ import { cookieConfere, nomeCookie } from "@/app/proposta/_lib/gate";
 import { minutosDeLeitura } from "@/app/proposta/_lib/leitura";
 import { PROPOSTAS } from "@/app/proposta/_lib/propostas";
 import {
+  CenaAuditor,
   CenaClassificacao,
   CenaEncerramento,
   CenaPaineis,
+  CenaResumoSla,
   CenaRoteamento,
   CenaSenseData,
   CenaSla,
@@ -102,6 +104,11 @@ const VAZAMENTOS = [
     title: "O SenseData parou quando a Viviana saiu",
     text: "Nada foi registrado desde então. Projetos se encerraram sem a pesquisa de satisfação de fase, e quem ficou não sabe por onde começar. O conhecimento estava em uma pessoa.",
   },
+  {
+    n: "06",
+    title: "A solução de um ticket não vira conhecimento",
+    text: "Ninguém confere como o ticket foi encerrado, e o estouro de SLA só aparece depois que aconteceu. Na call, o Leonardo pediu um jeito de os consultores encontrarem a solução de casos parecidos, e hoje esse histórico depende de como cada um escreveu.",
+  },
 ];
 
 const CONTRASTE: [string, string][] = [
@@ -110,6 +117,7 @@ const CONTRASTE: [string, string][] = [
   ["Dúvida em 69% dos tickets", "Produto, módulo e tipo de demanda em cada ticket"],
   ["Fila que alguém precisa distribuir à mão", "Ticket que já chega na equipe certa"],
   ["SenseData que dependia de uma pessoa", "Um consultor da casa que sabe operar e ensinar"],
+  ["Ninguém confere como o ticket foi encerrado", "Cada encerramento auditado por um agente de IA"],
 ];
 
 const DELIVERABLES: Deliverable[] = [
@@ -244,6 +252,50 @@ const DELIVERABLES: Deliverable[] = [
       brief: "Consultor abrindo um projeto encerrado no SenseData, disparando a pesquisa de fase e vendo a resposta entrar no painel do cliente.",
     },
   },
+  {
+    n: "07",
+    title: "Agente auditor de tickets",
+    tagline: "Todo ticket encerrado passa por uma conferência antes de virar histórico.",
+    body: [
+      "Um agente de IA lê cada ticket resolvido, com as ações, a categoria e a urgência, e compara com o que a Easyone define como um bom encerramento. Se faltar alguma coisa, ele reabre o ticket e diz ao consultor o que completar. O que fica registrado passa a servir de base de conhecimento.",
+    ],
+    items: [
+      "Critérios de um bom encerramento escritos com você e com o Leonardo",
+      "Leitura de cada ticket resolvido, com todas as ações",
+      "Reabertura automática do ticket fora do padrão",
+      "Orientação ao consultor sobre o que falta e como melhorar o registro",
+      "Fluxo documentado e entregue à Easyone",
+    ],
+    callout: {
+      label: "Compromisso importante",
+      text: "A orientação do auditor vai em ação interna, visível só para o seu time. Os critérios são de vocês, e o agente só passa a reabrir tickets depois de um período de teste em que apenas sugere.",
+    },
+    media: {
+      id: "B7",
+      aspect: "16:9",
+      brief: "Ticket resolvido só com a palavra Feito, o agente lendo, o status virando Reaberto pela auditoria e a ação interna listando o que falta, até o registro ficar dentro do padrão.",
+    },
+  },
+  {
+    n: "08",
+    title: "Agente de resumo diário de SLA",
+    tagline: "No fim do dia, você sabe o que estourou e o que está para estourar.",
+    body: [
+      "Um agente analisa os tickets do dia e manda um e-mail para a liderança: quantos ficaram dentro do SLA, quais estouraram, se foi na primeira resposta ou na solução, de qual equipe e de qual responsável. A conversa sobre prazo deixa de esperar o relatório do mês.",
+    ],
+    items: [
+      "E-mail diário com os tickets dentro e fora do SLA",
+      "Separação entre primeira resposta e solução",
+      "Equipe e responsável de cada ticket estourado, com o link do ticket",
+      "Lista dos tickets próximos do vencimento",
+      "Fluxo documentado e entregue à Easyone",
+    ],
+    media: {
+      id: "B8",
+      aspect: "16:9",
+      brief: "E-mail de resumo diário chegando, a barra de tickets dentro do SLA enchendo e as linhas dos tickets estourados e a vencer aparecendo, cada uma com a equipe.",
+    },
+  },
 ];
 
 const FASES = [
@@ -256,14 +308,14 @@ const FASES = [
   {
     n: "Semanas 3 e 4",
     title: "SLA por contrato",
-    text: "Definição dos contratos e dos prazos com a liderança, configuração e associação por tipo de cliente.",
-    entrega: "Prazos novos em produção, por tipo de cliente e por urgência.",
+    text: "Definição dos contratos e dos prazos com a liderança, configuração e associação por tipo de cliente. Com os prazos certos, o agente de resumo diário entra em operação.",
+    entrega: "Prazos novos em produção, por tipo de cliente e por urgência, e o resumo diário de SLA chegando à liderança.",
   },
   {
     n: "Semanas 5 a 7",
     title: "Classificação e roteamento",
-    text: "Nova árvore de serviços, categorias, tags, formulários do portal, equipes por serviço e distribuição automática.",
-    entrega: "Tickets classificados por produto e módulo e distribuídos por equipe.",
+    text: "Nova árvore de serviços, categorias, tags, formulários do portal, equipes por serviço e distribuição automática. O agente auditor entra em teste, só sugerindo.",
+    entrega: "Tickets classificados por produto e módulo, distribuídos por equipe e conferidos pelo auditor no encerramento.",
   },
   {
     n: "Semana 8",
@@ -309,6 +361,16 @@ const PRECISAMOS = [
     quando: "Semana 5",
   },
   {
+    o: "Critérios do que é um ticket bem encerrado",
+    porque: "É a régua que o agente auditor vai aplicar",
+    quando: "Semana 5",
+  },
+  {
+    o: "Aprovação do custo de uso dos agentes de IA",
+    porque: "O modelo de IA e a hospedagem dos fluxos são pagos pela Easyone direto aos fornecedores. A estimativa mensal é apresentada antes de cada agente ser ligado",
+    quando: "Semanas 3 e 5",
+  },
+  {
     o: "Quem cobre a fila de Desenvolvimento além da Carolina",
     porque: "É uma decisão de gestão",
     quando: "Semana 5",
@@ -329,11 +391,13 @@ const INVESTIMENTO_ITENS = [
   "80 horas de consultoria, a R$ 200,00 a hora",
   "Projeto fechado, sem mensalidade",
   "Pagamento por boleto, em até 3 vezes, com vencimentos em 30, 60 e 90 dias",
-  "Nenhum custo de ferramenta nova: tudo é feito no Movidesk e no SenseData que a Easyone já contrata",
+  "Sem licença nova: tudo roda no Movidesk e no SenseData que a Easyone já contrata",
+  "O uso dos dois agentes de IA (modelo de IA e hospedagem dos fluxos) é pago pela Easyone, direto aos fornecedores",
 ];
 
 const INCLUSO = [
   "As cinco frentes de reestruturação do Movidesk descritas nos blocos 01 a 05",
+  "Os dois agentes de IA dos blocos 07 e 08: auditor de tickets e resumo diário de SLA",
   "O fechamento em lote dos tickets parados em Resolvido",
   "Treinamento completo de SenseData para um consultor da Easyone, com sessões gravadas e roteiro escrito",
   "Reuniões de acompanhamento durante as 8 semanas",
@@ -342,7 +406,8 @@ const INCLUSO = [
 
 const NAO_INCLUSO = [
   "Acompanhamento continuado de CS depois das 8 semanas, que é uma proposta à parte",
-  "Agentes de IA no Movidesk, como o auditor de tickets, o resumo diário de SLA e o Instant Support",
+  "O custo de uso dos agentes de IA (modelo de IA e hospedagem dos fluxos), pago pela Easyone direto aos fornecedores",
+  "Outros agentes de IA, como o Instant Support dentro do produto e a sugestão automática de tickets semelhantes",
   "Integração de WhatsApp ao atendimento",
   "Desenvolvimento no SAP da Easyone ou mudança nas integrações do SAP com o Movidesk e o SenseData",
   "Controle dos chamados que não integraram com o SAP",
@@ -354,7 +419,7 @@ const GARANTIAS = [
   {
     icon: FileCheck2,
     title: "Tudo fica com vocês",
-    text: "Gatilhos, contratos de SLA, árvore de serviços e painéis são configurados no Movidesk da Easyone e continuam lá depois do projeto, com a documentação.",
+    text: "Gatilhos, contratos de SLA, árvore de serviços e painéis são configurados no Movidesk da Easyone e continuam lá depois do projeto. Os fluxos dos dois agentes de IA também são de vocês, com a documentação.",
   },
   {
     icon: Building2,
@@ -364,7 +429,7 @@ const GARANTIAS = [
   {
     icon: UserCheck,
     title: "Nada muda sem validação",
-    text: "Prazo de SLA, árvore de serviços e regra de roteamento só entram em produção depois de aprovados por você e pelo Leonardo.",
+    text: "Prazo de SLA, árvore de serviços, regra de roteamento e critérios do auditor só entram em produção depois de aprovados por você e pelo Leonardo.",
   },
   {
     icon: ShieldCheck,
@@ -391,8 +456,12 @@ const FAQ_ITENS = [
     a: "Não. A configuração é feita pela M2G. De vocês, precisamos das validações listadas acima, com resposta em até 48 horas.",
   },
   {
-    q: "E os agentes de IA que vocês mostraram na call?",
-    a: "Eles dependem de ticket bem classificado e bem encerrado, que é o que este projeto entrega. São a etapa seguinte e não estão nesta proposta.",
+    q: "Quanto custa manter os agentes de IA depois do projeto?",
+    a: "Não há mensalidade da M2G. O que existe é o custo de uso, do modelo de IA e da hospedagem dos fluxos, pago pela Easyone direto aos fornecedores. A estimativa mensal é apresentada antes de cada agente ser ligado, e você decide com o número na mão.",
+  },
+  {
+    q: "E o Instant Support que vocês mostraram na call?",
+    a: "Não está nesta proposta. Ele depende de uma base de conhecimento bem formada, e é o auditor de tickets que começa a construir essa base. É a etapa seguinte.",
   },
 ];
 
@@ -414,7 +483,7 @@ const TERMO: Termo = {
   origem:
     "Este documento resume o que foi combinado na call de alinhamento de 30 de setembro de 2026 e na apresentação do diagnóstico do Movidesk.",
   objeto:
-    "Reestruturação do Movidesk da Easyone em cinco frentes (encerramento e pesquisa, SLA por contrato, classificação, roteamento e painéis) e treinamento completo de SenseData para um consultor indicado pela Easyone, em 80 horas de consultoria.",
+    "Reestruturação do Movidesk da Easyone em cinco frentes (encerramento e pesquisa, SLA por contrato, classificação, roteamento e painéis), treinamento completo de SenseData para um consultor indicado pela Easyone e implantação de dois agentes de IA (auditor de tickets e resumo diário de SLA), em 80 horas de consultoria.",
   blocos: DELIVERABLES.map(({ n, title, tagline, bonus }) => ({ n, title, tagline, bonus })),
   fases: FASES.map(({ n, title, entrega }) => ({ n, title, entrega })),
   prazoTotal:
@@ -432,6 +501,7 @@ const TERMO: Termo = {
   ressalvas: [
     "Horas além das 80 contratadas custam R$ 200,00 a hora e só são executadas com aprovação prévia da Easyone.",
     "As licenças de Movidesk e de SenseData seguem no contrato atual da Easyone com a Zenvia e não fazem parte deste valor.",
+    "O custo de uso dos agentes de IA, do modelo de IA e da hospedagem dos fluxos, é pago pela Easyone direto aos fornecedores. A estimativa mensal é apresentada antes de cada agente ser ligado.",
     "Esta proposta é válida por 15 dias a partir do envio.",
   ],
   checkoutUrl: CHECKOUT_URL,
@@ -477,6 +547,8 @@ export default async function PropostaEasyonePage({
     B4: <CenaRoteamento />,
     B5: <CenaPaineis />,
     B6: <CenaSenseData />,
+    B7: <CenaAuditor />,
+    B8: <CenaResumoSla />,
   };
 
   return (
@@ -539,7 +611,7 @@ export default async function PropostaEasyonePage({
       <Section id="gargalo" tone="raised">
         <div className="space-y-4">
           <Eyebrow>Onde vaza</Eyebrow>
-          <Headline>Cinco pontos que escondem o bom atendimento que vocês já fazem.</Headline>
+          <Headline>Seis pontos que escondem o bom atendimento que vocês já fazem.</Headline>
         </div>
         <div className="mt-10 space-y-4">
           {VAZAMENTOS.map((v) => (
@@ -585,7 +657,7 @@ export default async function PropostaEasyonePage({
       <Section id="entregaveis" width="wide">
         <div className="space-y-4">
           <Eyebrow>O que entra</Eyebrow>
-          <Headline>Seis blocos, cada um resolvendo um ponto do diagnóstico.</Headline>
+          <Headline>Oito blocos, cada um resolvendo um ponto do diagnóstico.</Headline>
         </div>
         <div className="mt-10 space-y-6">
           {DELIVERABLES.map((b) => (
@@ -708,7 +780,7 @@ export default async function PropostaEasyonePage({
               </p>
               <p className="font-mono text-sm text-text">{COMERCIAL.parcelado}</p>
               <p className="text-sm leading-relaxed text-text-muted">
-                Cobre os 6 blocos, as 8 semanas e o treinamento do consultor.
+                Cobre os 8 blocos, as 8 semanas e o treinamento do consultor.
               </p>
               <div className="space-y-2.5 pt-1">
                 <BotaoAceite
